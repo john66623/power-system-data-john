@@ -22,10 +22,10 @@ load = load.set_index("Time(Local)")
 
 # Plotter lastprofil fra helt døgn
 lastprofil = load.loc["2026-01-15"]
-lastprofil.plot()
-plt.grid()
-plt.xlabel("Tidspunkt")
-plt.ylabel("Produksjon og forbruk")
+# lastprofil.plot()
+# plt.grid()
+# plt.xlabel("Tidspunkt")
+# plt.ylabel("Produksjon og forbruk")
 # plt.savefig("oving4/lastprofil_plot")
 
 # Lager netto kolonne
@@ -48,3 +48,19 @@ min_netto_tid = load["Netto"].idxmin()
 
 print("Maks nettoproduksjon er: ", round(max_netto, 2), " ved tidspunkt ", max_netto_tid)
 print("Minimum nettoproduskjon er: ", round(min_netto, 2), " ved tidspunkt", min_netto_tid)
+
+# Beregner sum
+sum_prod = load["Production"].sum()
+
+print("Summen for produksjon er: ", sum_prod)
+
+# Plotter produksjon og forbruk for hele året som funksjon av tid
+# plt.figure()
+load.plot(y = ["Production", "Consumption"])
+plt.grid(True)
+plt.title("Produksjon og forbruk for 2026")
+plt.xlabel("Tidspunkt")
+plt.ylabel("Produksjon og forbruk")
+plt.legend()
+
+plt.savefig("oving4/prod_og_forbruk_2026.png")
