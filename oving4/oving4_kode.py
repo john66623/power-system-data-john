@@ -63,4 +63,14 @@ plt.xlabel("Tidspunkt")
 plt.ylabel("Produksjon og forbruk")
 plt.legend()
 
-plt.savefig("oving4/prod_og_forbruk_2026.png")
+# plt.savefig("oving4/prod_og_forbruk_2026.png")
+
+# Lager ny graf som også inkluderer netto-produksjon
+load.plot()
+plt.grid(True)
+plt.title("Produksjon, forbruk og nettoproduksjon for 2026")
+plt.xlabel("Tidspunkt")
+plt.ylabel("Produksjon, forbruk og nettoproduksjon")
+plt.legend()
+
+plt.savefig("oving4/prod_forbruk_nettoprod_2026.png")
