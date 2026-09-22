@@ -35,3 +35,7 @@ Then edit `.env` and insert your ENTSO-E API key:
 ```text
 ENTSOE_API_KEY=your_api_key_here
 ```
+
+## Additional
+
+This repo is a clone used for mandatory and experimental uploads through Git. Additional folders have been made for each new mandatory assignment through the course ELK330 at University of Stavanger. 
