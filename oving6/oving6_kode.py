@@ -18,6 +18,7 @@ print(soldata.head())
 print(soldata["G(i)"].idxmax())
 
 t = np.linspace(0, 23, 500) # Lager tidsakse med 24 timer
+t_lowres = np.linspace(0, 23, 24)
 
 # Setter verdier for innstråling
 maks_straling = 800
@@ -42,5 +43,16 @@ plt.grid(True)
 plt.xlabel("Tid i timer")
 plt.ylabel("Stråling")
 plt.title("Solstråling for 23. mai 2023 for hytta")
+plt.legend()
+plt.show()
+
+# Plotter kurvene sammen
+plt.figure()
+plt.plot(t_lowres, soldata.loc["2023-05-23", "G(i)"], label = "Solstråling PVgis")
+plt.plot(t, modell_straling, label = "Solstråling modell")
+plt.grid(True)
+plt.xlabel("Tid i timer")
+plt.ylabel("Stråling")
+plt.title("Solstråling og modell plottet sammen")
 plt.legend()
 plt.show()
