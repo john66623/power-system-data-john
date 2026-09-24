@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-t = np.linspace(0, 23, 24) # Lager tidsakse med 24 timer
+t = np.linspace(0, 23, 500) # Lager tidsakse med 24 timer
 
 # Setter verdier for innstråling
 maks_straling = 800
