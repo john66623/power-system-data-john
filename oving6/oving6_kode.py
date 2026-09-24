@@ -21,9 +21,11 @@ t = np.linspace(0, 23, 500) # Lager tidsakse med 24 timer
 t_lowres = np.linspace(0, 23, 24)
 
 # Setter verdier for innstråling
-maks_straling = 800
+maks_straling = soldata.loc["2023-05-23", "G(i)"].max()
 bredde_straling = 3
-tid_straling = 13
+tid_straling = 12
+
+print(maks_straling)
 
 # Modellerer solstråling
 modell_straling = maks_straling * np.exp(-(((t - tid_straling)**2) / (2 * bredde_straling**2)))
@@ -44,7 +46,6 @@ plt.xlabel("Tid i timer")
 plt.ylabel("Stråling")
 plt.title("Solstråling for 23. mai 2023 for hytta")
 plt.legend()
-plt.show()
 
 # Plotter kurvene sammen
 plt.figure()
